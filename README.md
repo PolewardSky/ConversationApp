@@ -3,6 +3,11 @@
 
  - Using Rails 7 with Hotwire and StimulusJS
 
+ To run this project locally simply bundle install
+ rake db:create, rake db:migrate, rails s
+
+ I've added a screen recording of the application to the root folder for a simple demo
+
 # Sample questions for colleagues
 What is meant by "changes in status", we need to break this out into definitions of status i.e. what affect do these statuses have on the system as whole?
  - I expect to see clear use case definitions of the work and how the system would change depending on the statues set.
