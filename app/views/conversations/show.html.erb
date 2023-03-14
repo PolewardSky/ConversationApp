@@ -6,10 +6,10 @@
   <%= render @conversation %>
 
   <div>
-    <%= link_to "Edit this conversation", edit_conversation_path(@conversation) %> |
-    <%= link_to "Back to conversations", conversations_path %>
+    <%= link_to "Edit this conversation", edit_conversation_path(@conversation) %>
   </div>
 <% end %>
+<%= link_to "Back to conversations", conversations_path %>
 <%= button_to "Destroy this conversation", @conversation, method: :delete %>
 
 <div id="messages">
