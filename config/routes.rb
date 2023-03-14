@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :conversations do
-    resources :messages, only: [:create, :destroy]
+    resources :messages
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

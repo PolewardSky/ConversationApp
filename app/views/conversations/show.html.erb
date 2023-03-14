@@ -1,11 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @conversation %>
-<%= render @conversation.messages %>
+<%= turbo_stream_from @conversation %>
 
-<div>
-  <%= link_to "Edit this conversation", edit_conversation_path(@conversation) %> |
-  <%= link_to "Back to conversations", conversations_path %>
+<%= turbo_frame_tag @conversation do %>
+  <%= render @conversation %>
 
-  <%= button_to "Destroy this conversation", @conversation, method: :delete %>
+  <div>
+    <%= link_to "Edit this conversation", edit_conversation_path(@conversation) %> |
+    <%= link_to "Back to conversations", conversations_path %>
+  </div>
+<% end %>
+<%= button_to "Destroy this conversation", @conversation, method: :delete %>
+
+<div id="messages">
+  <%= render @conversation.messages %>
 </div>
+
+<%= turbo_frame_tag "new_message", src: new_conversation_message_path(@conversation, target: "_top") %>
